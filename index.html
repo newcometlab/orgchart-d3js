@@ -24,7 +24,7 @@
 
     #body {
         cursor: move;
-        height:700px;
+        height:calc(100vh - 50px);
         width:100%;
         background-color:#fff;
         border:1px solid black;
@@ -445,14 +445,14 @@
     
     function loadChilds(actualElement, successFunction) 
     {
-        $.getJSON("getPositions.php?id=" + actualElement.id, 
+        $.getJSON("https://php-orgchart-d3js.herokuapp.com/?id=" + actualElement.id, 
                 function(data) 
                 {
                     successFunction(data);
                 });
     }
 
-    $.getJSON("getPositions.php?id=0", 
+    $.getJSON("https://php-orgchart-d3js.herokuapp.com/?id=0", 
         function(data) 
         {
             u_data = data;
